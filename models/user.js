@@ -23,6 +23,7 @@ const schema = new mongoose.Schema(
       type: String,
       minlength: 8,
       select: false,
+      required: [true, '密碼必填'],
     },
     email: {
       type: String,

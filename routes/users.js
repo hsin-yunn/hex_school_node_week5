@@ -4,10 +4,10 @@ const controller = require('../controllers/userController');
 const handleErrorAsync = require('../service/handleErrorAsync');
 
 //index
-router.get('/', handleErrorAsync(controller.index));
+router.get('/users', handleErrorAsync(controller.index));
 //store
-router.post('/', handleErrorAsync(controller.store));
+router.post('/users', handleErrorAsync(controller.store));
 //show
-router.post('/:id', handleErrorAsync(controller.show));
+router.get('/users/:id', handleErrorAsync(controller.show));
 
 module.exports = router;

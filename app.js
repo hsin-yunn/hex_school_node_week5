@@ -31,8 +31,8 @@ mongoose
   });
 
 //routers require
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var postsRouter = require('./routes/posts');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -41,8 +41,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //routers
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(usersRouter);
+app.use(postsRouter);
 
 //404 not found
 app.use(function (req, res, next) {
